@@ -28,6 +28,7 @@ int main(int argc, char *argv[])
 		exit(EXIT_FAILURE);
 	}
 	buff = malloc(sizeof(char *));
+	if (buff == NULL)
 	{
 		fclose(o);
 		fprintf(stderr, "Error: malloc failed\n");

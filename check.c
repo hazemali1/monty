@@ -18,7 +18,7 @@ void check(char **buff, stack_t **h, int p)
 		while (str != NULL)
 		{
 			Buf[d] = malloc(1024);
-			if (Buf == NULL)
+			if (Buf[d] == NULL)
 			{
 				fprintf(stderr, "Error: malloc failed\n");
 				exit(EXIT_FAILURE);
