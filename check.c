@@ -9,10 +9,12 @@ void check(char **buff, stack_t **h, int p)
 {
 	int s = 0, d;
 	char *str;
-	char Buf[1024][1024];
+	char *Buf[1024];
 
 	while (buff[s] && p > 0)
 	{
+		Buf[0] = malloc(1024);
+		Buf[1] = malloc(1024);
 		d = 0;
 		str = strtok(buff[s], " ");
 		while (str != NULL)
@@ -29,5 +31,7 @@ void check(char **buff, stack_t **h, int p)
 			_pall(h);
 		s++;
 		p--;
+		free(Buf[0]);
+		free(Buf[1]);
 	}
 }

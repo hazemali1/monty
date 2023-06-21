@@ -13,7 +13,7 @@ void _push(char *Buf, stack_t **h, int l)
 
 	if (Buf == NULL)
 	{
-		fprintf(stderr, "L%d: usage: push integer\n", l);
+		fprintf(stderr, "L%d: usage: push integer\n", l + 1);
 		exit(EXIT_FAILURE);
 	}
 	n = atoi(Buf);
@@ -42,7 +42,7 @@ void _push(char *Buf, stack_t **h, int l)
 	}
 	else
 	{
-		fprintf(stderr, "L%d: usage: push integer\n", l);
+		fprintf(stderr, "L%d: usage: push integer\n", l + 1);
 		exit(EXIT_FAILURE);
 	}
 }
