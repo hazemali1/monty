@@ -42,7 +42,7 @@ typedef struct instruction_s
 } instruction_t;
 
 void check(char **buff, stack_t **h, int p);
-void _push(char *Buf, stack_t **h, int l);
+void _push(char **Buf, stack_t **h, int l, char **buff, int t);
 void _pall(stack_t **h);
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 void *fill_all_array(void *a, int el, unsigned int len);
