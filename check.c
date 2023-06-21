@@ -33,6 +33,8 @@ void check(char **buff, stack_t **h, int p)
 		}
 		else if (strcmp(Buf[0], "pall") == 0 || strcmp(Buf[0], "pall\n") == 0)
 			_pall(h);
+		else if (strcmp(Buf[0], "pint") == 0 || strcmp(Buf[0], "pint\n") == 0)
+			_pint(h, buff, t, s, Buf);
 		s++;
 		p--;
 		while (d > -1)

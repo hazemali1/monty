@@ -47,5 +47,6 @@ void _pall(stack_t **h);
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 void *fill_all_array(void *a, int el, unsigned int len);
 char *_memcpy(char *dest, char *src, unsigned int n);
+void _pint(stack_t **h, char **buff, int s, int l, char **Buf);
 
 #endif
