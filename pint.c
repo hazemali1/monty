@@ -18,6 +18,7 @@ void _pint(stack_t **h, char **buff,int s, int l, char **Buf)
         	}
         	free(buff);
 		free(Buf[0]);
+		free(Buf[1]);
 		fprintf(stderr, "L%d: can't pint, stack empty\n", l + 1);
 		exit(EXIT_FAILURE);
 	}
