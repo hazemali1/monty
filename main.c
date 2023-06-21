@@ -28,6 +28,11 @@ int main(int argc, char *argv[])
 		exit(EXIT_FAILURE);
 	}
 	buff = malloc(sizeof(char *));
+	{
+		fclose(o);
+		fprintf(stderr, "Error: malloc failed\n");
+		exit(EXIT_FAILURE);
+	}
 	buff[0] = NULL;
 	while ((getline(&buff[s], &size, o)) != -1)
 	{

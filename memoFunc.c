@@ -22,7 +22,10 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	}
 	result = malloc(new_size);
 	if (result == NULL)
-		return (NULL);
+	{
+		fprintf(stderr, "Error: malloc failed\n");
+		exit(EXIT_FAILURE);
+	}
 	if (ptr == NULL)
 	{
 		fill_all_array(result, '\0', new_size);
