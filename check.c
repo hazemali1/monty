@@ -5,13 +5,13 @@
  *
  * @buff: Buffer
 */
-void check(char **buff, stack_t **h)
+void check(char **buff, stack_t **h, int p)
 {
 	int s = 0, d;
 	char *str;
 	char Buf[1024][1024];
 
-	while (buff[s])
+	while (buff[s] && p > 0)
 	{
 		d = 0;
 		str = strtok(buff[s], " ");
@@ -28,5 +28,6 @@ void check(char **buff, stack_t **h)
 		else if (strcmp(Buf[0], "pall") == 0 || strcmp(Buf[0], "pall\n") == 0)
 			_pall(h);
 		s++;
+		p--;
 	}
 }

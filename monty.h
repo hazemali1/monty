@@ -41,8 +41,11 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-void check(char **buff, stack_t **h);
+void check(char **buff, stack_t **h, int p);
 void _push(char *Buf, stack_t **h, int l);
 void _pall(stack_t **h);
+void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
+void *fill_all_array(void *a, int el, unsigned int len);
+char *_memcpy(char *dest, char *src, unsigned int n);
 
 #endif

@@ -10,9 +10,9 @@
 */
 int main(int argc, char *argv[])
 {
-	int s = 0, i;
+	int s = 0, i = 0;
 	size_t size = 0;
-	char *buff[1024] = {NULL};
+	char **buff = NULL;
 	FILE *o;
 	stack_t *h = NULL, *q;
 
@@ -27,13 +27,22 @@ int main(int argc, char *argv[])
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
+	buff = malloc(sizeof(char *));
+	buff[0] = NULL;
 	while ((getline(&buff[s], &size, o)) != -1)
+	{
 		s++;
-	buff[s] = NULL;
+		buff = _realloc(buff, s * sizeof(char *), (s + 1) * sizeof(char *));
+		buff[s] = NULL;
+	}
 	fclose(o);
-	check(buff, &h);
-	for (i = 0; i < s; i++)
+	check(buff, &h, s);
+	while (i <= s)
+	{
 		free(buff[i]);
+		i++;
+	}
+	free(buff);
 	while (h)
 	{
 		q = h;
