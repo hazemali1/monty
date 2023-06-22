@@ -26,7 +26,7 @@ void _swap(stack_t **h, char **buff, int s, int l, char **Buf)
                 free(Buf[1]);
                 if (*h)
                         free(*h);
-		fprintf(stderr, "L%d: can't swap, stack too short\n", l + 1);
+		fprintf(stderr, "L%d: can't swap,  stack too short\n", l + 1);
 		exit(EXIT_FAILURE);
 	}
 	q = *h;
