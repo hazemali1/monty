@@ -10,7 +10,7 @@ void _rotl(stack_t **h)
 	stack_t *q, *w;
 
 	q = *h;
-	if (q)
+	if (q && q->next)
 	{
 		*h = (*h)->next;
 		(*h)->prev = NULL;
