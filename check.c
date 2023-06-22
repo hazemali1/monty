@@ -51,6 +51,12 @@ void check(char **buff, stack_t **h, int p)
                                 Buf[1] = NULL;
 			_swap(h, buff, t, s, Buf);
 		}
+		else if (strcmp(Buf[0], "add") == 0 || strcmp(Buf[0], "add\n") == 0)
+                {
+                        if (d == 1)
+                                Buf[1] = NULL;
+                        _add(h, buff, t, s, Buf);
+                }
 		s++;
 		p--;
 		while (d > -1)

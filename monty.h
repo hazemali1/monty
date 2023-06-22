@@ -50,5 +50,6 @@ char *_memcpy(char *dest, char *src, unsigned int n);
 void _pint(stack_t **h, char **buff, int s, int l, char **Buf);
 void _pop(stack_t **h, char **buff, int s, int l, char **Buf);
 void _swap(stack_t **h, char **buff, int s, int l, char **Buf);
+void _add(stack_t **h, char **buff, int s, int l, char **Buf);
 
 #endif
