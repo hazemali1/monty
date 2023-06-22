@@ -81,6 +81,12 @@ void check(char **buff, stack_t **h, int p)
                                 Buf[1] = NULL;
                         _mod(h, buff, t, s, Buf);
                 }
+		else if (strcmp(Buf[0], "pchar") == 0 || strcmp(Buf[0], "pchar\n") == 0)
+                {
+                        if (d == 1)
+                                Buf[1] = NULL;
+                        _pchar(h, buff, t, s, Buf);
+                }
 		s++;
 		p--;
 		while (d > -1)
