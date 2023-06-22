@@ -26,7 +26,7 @@ void _sub(stack_t **h, char **buff, int s, int l, char **Buf)
                 free(Buf[1]);
                 if (*h)
                         free(*h);
-		fprintf(stderr, "L%d: can't add, stack too short\n", l + 1);
+		fprintf(stderr, "L%d: can't sub, stack too short\n", l + 1);
 		exit(EXIT_FAILURE);
 	}
 	r = (*h)->next->n - (*h)->n;
