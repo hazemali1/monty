@@ -6,10 +6,10 @@
  * @Buf: Buffer
  * @h: Stack
 */
-void _push(char **Buf, stack_t **h, int l, char **buff, int t)
+void _push(char **Buf, stack_t **h, int l, char **buff, int t, int mode)
 {
 	int n, i = 0;
-	stack_t *new, *q;
+	stack_t *new, *q, *k;
 
 	if (!Buf[1])
 	{
@@ -56,18 +56,40 @@ void _push(char **Buf, stack_t **h, int l, char **buff, int t)
 			exit(EXIT_FAILURE);
 		}
 		new->n = n;
-		if (*h == NULL)
+		if (mode == 0)
 		{
-			new->next = NULL;
-			new->prev = NULL;
-			*h = new;
+			if (*h == NULL)
+			{
+				new->next = NULL;
+				new->prev = NULL;
+				*h = new;
+			}
+			else
+			{
+				new->next = *h;
+				new->prev = NULL;
+				(*h)->prev = new;
+				*h = new;
+			}
 		}
-		else
+		else if (mode == 1)
 		{
-			new->next = *h;
-			new->prev = NULL;
-			(*h)->prev = new;
-			*h = new;
+			if (*h == NULL)
+			{
+				new->next = NULL;
+				new->prev = NULL;
+				*h = new;
+			}
+			else
+			{
+				k = *h;
+				while (k->next)
+					k = k->next;
+				new->next = NULL;
+				new->prev = k;
+				k->next = new;
+			}
+
 		}
 	}
 	else

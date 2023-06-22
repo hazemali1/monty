@@ -7,7 +7,7 @@
 */
 void check(char **buff, stack_t **h, int p)
 {
-	int s = 0, d, t = p;
+	int s = 0, d, t = p, mode = 0;
 	char *str;
 	char *Buf[1024];
 
@@ -29,7 +29,7 @@ void check(char **buff, stack_t **h, int p)
 		}
 		if (strcmp(Buf[0], "push") == 0 || strcmp(Buf[0], "push\n") == 0)
 		{
-			_push(Buf, h, s, buff, t);
+			_push(Buf, h, s, buff, t, mode);
 		}
 		else if (strcmp(Buf[0], "pall") == 0 || strcmp(Buf[0], "pall\n") == 0)
 			_pall(h);
@@ -93,6 +93,10 @@ void check(char **buff, stack_t **h, int p)
 			_rotl(h);
 		else if (strcmp(Buf[0], "rotr") == 0 || strcmp(Buf[0], "rotr\n") == 0)
 			_rotr(h);
+		else if (strcmp(Buf[0], "stack") == 0 || strcmp(Buf[0], "stack\n") == 0)
+			mode = 0;
+		else if (strcmp(Buf[0], "queue") == 0 || strcmp(Buf[0], "queue\n") == 0)
+			mode = 1;
 		s++;
 		p--;
 		while (d > -1)
