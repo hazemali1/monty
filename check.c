@@ -69,6 +69,12 @@ void check(char **buff, stack_t **h, int p)
                                 Buf[1] = NULL;
                         _div(h, buff, t, s, Buf);
                 }
+		else if (strcmp(Buf[0], "mul") == 0 || strcmp(Buf[0], "mul\n") == 0)
+                {
+                        if (d == 1)
+                                Buf[1] = NULL;
+                        _mul(h, buff, t, s, Buf);
+                }
 		s++;
 		p--;
 		while (d > -1)
