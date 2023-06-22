@@ -56,4 +56,5 @@ void _div(stack_t **h, char **buff, int s, int l, char **Buf);
 void _mul(stack_t **h, char **buff, int s, int l, char **Buf);
 void _mod(stack_t **h, char **buff, int s, int l, char **Buf);
 void _pchar(stack_t **h, char **buff, int s, int l, char **Buf);
+void _pstr(stack_t **h);
 #endif
