@@ -89,6 +89,8 @@ void check(char **buff, stack_t **h, int p)
                 }
 		else if (strcmp(Buf[0], "pstr") == 0 || strcmp(Buf[0], "pstr\n") == 0)
 			_pstr(h);
+		else if (strcmp(Buf[0], "rotl") == 0 || strcmp(Buf[0], "rotl\n") == 0)
+			_rotl(h);
 		s++;
 		p--;
 		while (d > -1)
