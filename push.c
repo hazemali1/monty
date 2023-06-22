@@ -32,7 +32,7 @@ void _push(char **Buf, stack_t **h, int l, char **buff, int t)
 		exit(EXIT_FAILURE);
 	}
 	n = atoi(Buf[1]);
-	if (n != 0)
+	if (n != 0 || (strlen(Buf[1]) == 2 && isdigit(Buf[1][0])))
 	{
 		new = malloc(sizeof(stack_t));
 		if (new == NULL)

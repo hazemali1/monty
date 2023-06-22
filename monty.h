@@ -52,5 +52,5 @@ void _pop(stack_t **h, char **buff, int s, int l, char **Buf);
 void _swap(stack_t **h, char **buff, int s, int l, char **Buf);
 void _add(stack_t **h, char **buff, int s, int l, char **Buf);
 void _sub(stack_t **h, char **buff, int s, int l, char **Buf);
-
+void _div(stack_t **h, char **buff, int s, int l, char **Buf);
 #endif
